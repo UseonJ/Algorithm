@@ -50,8 +50,16 @@
 // solution('aAaA')
 
 //
-function solution(my_string) {
+// function solution(my_string) {
     
+//     return my_string.split('').filter(x => typeof x === 'number').sort((a,b) => a-b);
+// }
+
+// console.log(solution('ab1233'))
+
+
+//배열 회전시키기
+
     return my_string.split('').filter(x => typeof x === 'number').sort((a,b) => a-b);
 }
 
