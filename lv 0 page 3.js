@@ -262,5 +262,19 @@
 // console.log(solution("olleh",	"hello"))
 // 간만에 내 풀이 좀 좋다..?
 
-//4-3 
+//4-3 factorial
+function solution(n) {
+   let divide = 0;
+   let factorial = 1;
+   for(i=2; n>factorial; i++){
+      if(n>=factorial*i) {
+         factorial *= i; 
+         divide = i;
+      }else{
+         return divide;
+      }}
+   
+}
+
+console.log(solution(7))
 
