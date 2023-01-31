@@ -40,9 +40,54 @@
 //    return i;
 // }
 
-// 2-dimension
-function solution(num_list, n) {
-    for(i=0; i<num_list/n; i++){
-        [...num_list]
-    }
- }
+// 4-4 2-dimension
+// function solution(num_list, n) {
+//     let result = [];
+//     for(i=0; i<num_list.length/n; i++){
+//         result[i] = [];
+//         for(j=0; j<n; j++){
+//             result[i].push(num_list[n*i+j])
+//         }
+//     }
+//     return result;
+//  }
+
+//  console.log(solution([1, 2, 3, 4, 5, 6, 7, 8], 2))
+
+//훨씬 간결한 풀이
+// function solution(num_list, n) {
+//     var answer = [];
+
+//     while(num_list.length) {
+//         answer.push(num_list.splice(0,n));
+//     }
+
+//     return answer;
+// }
+
+// 4-5 가장 가까운 수
+// 내풀이다냥
+// function solution(array, n) {
+//     return array.sort((a,b) => a-b).reduce((acc,cu) => Math.abs(n-acc)<=Math.abs(n-cu)? acc=acc:acc=cu)
+// }
+
+// 이건 뭐냥
+
+// let solution=(r,n)=>r.map(e=>[e,Math.abs(e-n)]).sort((a,b)=>a[1]-b[1]||a[0]-b[0])[0][0]
+
+// 4-6 응급순위 
+
+// function solution(emergency) {
+//     let emergencyCopied = emergency.slice()
+//     let first = emergencyCopied.sort((a,b)=>b-a)
+//     return emergency.map(x => x = first.indexOf(x) + 1)
+//   }
+
+// console.log(solution([3, 76, 24]))
+
+// function solution(emergency) {
+//         let first = [...emergency].sort((a,b)=>b-a)
+//         return emergency.map(x => x = first.indexOf(x) + 1)
+//       }
+// spread 문법으로 훨씬 간결하게
+
