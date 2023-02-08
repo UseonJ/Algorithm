@@ -174,6 +174,36 @@
 // console.log(solution(12))
 
 // 잘라서 배열로 저장하기
-function solution(my_str, n) {
-  return my_str.match(new RegExp(`.{1,${n}}`, "g"));
+// function solution(my_str, n) {
+//   return my_str.match(new RegExp(`.{1,${n}}`, "g"));
+// }
+
+// 
+// function solution(my_string) {
+//     let array = my_string.split(' ')
+//     let result = Number(array.shift())
+//     for(i=0; i<(array.length-1); i+=2){
+//         if(array[i]==="+"){
+//             result += Number(array[i+1])
+//         }
+//         else{
+//             result -= Number(array[i+1])
+//         }
+//     }
+//     return result;
+//  }
+
+// 구슬을 나누는 경우의 수
+function solution(balls, share) {
+    if(balls === 1) return 1;
+    let sibling = 1;
+    let mother = 1;
+    for(i=0; i<balls-share; i++){
+        sibling *= (balls-i);
+    }
+    for(i=1; i<=balls-share; i++){
+        mother *= i;
+    }
+    
+    return sibling/mother;
 }
