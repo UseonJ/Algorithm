@@ -194,16 +194,114 @@
 //  }
 
 // 구슬을 나누는 경우의 수
-function solution(balls, share) {
-    if(balls === 1) return 1;
-    let sibling = 1;
-    let mother = 1;
-    for(i=0; i<balls-share; i++){
-        sibling *= (balls-i);
-    }
-    for(i=1; i<=balls-share; i++){
-        mother *= i;
-    }
+// function solution(balls, share) {
+//     if(balls === 1) return 1;
+//     let sibling = 1;
+//     let mother = 1;
+//     for(i=0; i<balls-share; i++){
+//         sibling *= (balls-i);
+//     }
+//     for(i=1; i<=balls-share; i++){
+//         mother *= i;
+//     }
     
-    return sibling/mother;
-}
+//     return sibling/mother;
+// }
+
+// 최빈값 - 잘못생각한 풀이 고침
+// function solution(array) {
+//     newarray = array.map(x => {
+//         let count = 0;
+//         for (i=0; i<array.length; i++){
+//           if(array[i] === x){count++} 
+//       }
+//         return count;
+//     })
+//     console.log(newarray)
+//     const maxOf = Math.max(...newarray) 
+//     if(maxOf === newarray.filter(x => x===maxOf).length){
+//                         return array[newarray.indexOf(maxOf)];
+//                         }
+//     else{
+//         return -1;
+//     }
+// }
+
+// 다시생각한 풀이 - 객체로 만들어서 배열에 넣으려고함
+//     let result = []
+//     for (el in array){
+//       el  
+//     }
+// } 
+
+// console.log(solution([1, 2, 3, 3, 3, 4, 5, 5,5]))
+// console.log(solution([1,1,2,2,3,3,4,4]))
+
+// 이거 먼데..
+// function solution(array) {
+//     let m = new Map();
+//     for (let n of array) m.set(n, (m.get(n) || 0)+1);
+//     m = [...m].sort((a,b)=>b[1]-a[1]);
+//     return m.length === 1 || m[0][1] > m[1][1] ? m[0][0] : -1;
+// }
+
+
+//평행
+    // 1-2 1-3 1-4  이렇게 3가지 경우의 수가 있음
+    // 1-2 3-4 직선이 평행 또는 일치 하는 경우 > 기울기가 같음
+    function solution(dots) {
+
+        let a1 = (dots[0][1] - dots[1][1]) / (dots[0][0] - dots[1][0])
+        let a2 = (dots[2][1] - dots[3][1]) / (dots[2][0] - dots[3][0])
+    
+        let a3 = (dots[0][1] - dots[2][1]) / (dots[0][0] - dots[2][0])
+        let a4 = (dots[1][1] - dots[3][1]) / (dots[1][0] - dots[3][0])
+    
+        let a5 = (dots[0][1] - dots[3][1]) / (dots[0][0] - dots[3][0])
+        let a6 = (dots[1][1] - dots[2][1]) / (dots[1][0] - dots[2][0])
+    
+        if(a1===a2||a3===a4||a5===a6) return 1
+        else return 0
+            // }
+        // } 
+    }
+
+
+//singi hae
+// function solution(dots) {
+//     if (calculateSlope(dots[0], dots[1]) === calculateSlope(dots[2], dots[3]))
+//         return 1;
+//     if (calculateSlope(dots[0], dots[2]) === calculateSlope(dots[1], dots[3]))
+//         return 1;
+//     if (calculateSlope(dots[0], dots[3]) === calculateSlope(dots[1], dots[2]))
+//         return 1;
+//     return 0;
+// }
+
+// function calculateSlope(arr1, arr2) {
+//     return (arr2[1] - arr1[1]) / (arr2[0] - arr1[0]);
+// }
+
+// 이거 재귀로 풀면 될듯? 수 연산자 수 연산자= 니까 맨앞에 - 오는거 고려해주고, 네번반복되는 재귀함수 한다음에 나머지 음수인지 양수인지 판단해서 수식 맞는지 map 돌리면 될듯
+
+// ox퀴즈
+// function solution(quiz) {
+//     quiz.map(x => {
+//        let newx = x.split(' ')
+//        let X;
+//         let Y;
+//         let Z=0;
+//         for(i=0; i<newx.length && Z===0; i++){
+//             if(newx[i]==="=") return Z=i; //Z에 = 위치 기록
+//             if(Number(newx[i])===NaN && newx[i]!=="=")  {
+//                 Y=newx[i]
+//             }
+//             else if(Number(newx[i])!=="=") {
+//                 X = X+Number(newx[i])
+//             } 
+//        }
+//        if(newx[Z]==="-"){
+//            Y==="+" ? X+Y
+//        } 
+// })
+
