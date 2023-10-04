@@ -1,0 +1,1 @@
+const solution = (flo) => Number.parseInt(flo)
