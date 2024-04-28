@@ -5,3 +5,5 @@ function solution(arr, delete_list) {
     })
     return arr;
 }
+
+// const solution = (arr, dels) => arr.filter((el) => !dels.includes(el))
