@@ -3,3 +3,5 @@ function solution(myStr) {
 
     return answer.length ? answer : ["EMPTY"];
 }
+
+// const solution=s=>s.match(/[^a-c]+/g)||['EMPTY']
