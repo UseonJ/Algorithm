@@ -7,3 +7,4 @@ function solution(strings, n) {
         return 1
     });
 }
+// 가독성 내꺼가 더 좋은듯..?
