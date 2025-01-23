@@ -13,3 +13,14 @@ function solution(s) {
         return -1
     })
 }
+
+// 처음에 생각한 단계마다 업데이트
+// function solution(s) {
+//     const hash={};
+
+//     return [...s].map((v,i)=>{
+//         let result = hash[v] !== undefined ? i - hash[v] : -1;
+//         hash[v] = i;
+//         return result;
+//     });
+// }
