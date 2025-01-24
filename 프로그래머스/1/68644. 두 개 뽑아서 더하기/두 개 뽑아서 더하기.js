@@ -5,3 +5,5 @@ function solution(numbers) {
     })
     return Array.from(new Set(numberArr.sort((a,b) => a-b)))
 }
+
+// set로 정리하고 sort하는게 좋음.
