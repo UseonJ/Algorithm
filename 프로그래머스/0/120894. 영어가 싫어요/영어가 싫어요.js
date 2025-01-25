@@ -12,5 +12,5 @@ function solution(numbers) {
         "nine" : "9"
     }
     Object.keys(filter).forEach(a => numbers = numbers.replaceAll(a, filter[a]));
-    return numbers++;
+    return +numbers;
 }
