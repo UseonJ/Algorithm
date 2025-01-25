@@ -10,3 +10,6 @@ function solution(spell, dic) {
     }
     return 2
 }
+// function solution(p, d) {
+//     return d.some(s => p.sort().toString() == [...s].sort().toString()) ? 1 : 2;
+// }
