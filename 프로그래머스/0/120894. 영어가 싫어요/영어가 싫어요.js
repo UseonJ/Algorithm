@@ -14,3 +14,9 @@ function solution(numbers) {
     Object.keys(filter).forEach(a => numbers = numbers.replaceAll(a, filter[a]));
     return +numbers;
 }
+
+// const num = numbers.replace(/zero|one|two|three|four|five|six|seven|eight|nine/g, (v) => {
+//         return obj[v];
+//     });
+
+// 그리고 split이용하는 기술도 있음
